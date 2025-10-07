@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eCourts Case Dossier (Compact)</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] } } }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React & Babel -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Firebase Modules -->
+  <script type="module">
+    import * as Firebase from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import * as FirebaseAuth from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import * as Firestore from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+    window.Firebase = { ...Firebase, ...FirebaseAuth, ...Firestore };
+    window.__app_id = 'default-app-id';
+    window.__firebase_config = null;
+    window.__initial_auth_token = null;
+  </script>
+
+  <!-- Main App Script -->
+  <script type="text/babel" src="script.js"></script>
+</body>
+</html>
